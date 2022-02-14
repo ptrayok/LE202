@@ -36,3 +36,45 @@ WiFi.SSID() --> ดึงค่า SSID และทำการแสดงผ�
 WiFi.RSSI() --> ดึงค่าความแรงสัญญาณ และแสดงผลค่าความแรงสัญญาณ
 
 WiFi.channel(i) -->  ดึงค่า channel ของสัญญาณ และแสดงผลช่องสัญญาณ
+
+### Example 03 Output Port
+![image](https://user-images.githubusercontent.com/98943439/153913488-93105ca2-7fb7-4c1a-bb41-ad3216bf7ad8.png)
+
+pinMode() --> กำหนดการทำงานของแต่ละ pin
+
+difitalWrite() -->  สั่งงานให้ output ค่า HIGH/LOW ที่ขา digital output ของบอร์ด
+
+### Example 04 Input Port
+![image](https://user-images.githubusercontent.com/98943439/153914168-4ea505ce-a232-4554-a8fe-683d3fea946c.png)
+
+digitalRead() --> คำสั่งอ่านค่าสถานะของ input pin
+
+digitalWrite() --> คำสั่งเขียนค่า HIGH/LOW ไปยัง Output pin
+
+### Example 05 Wifi Web Sever
+![image](https://user-images.githubusercontent.com/98943439/153914433-9993f7b5-c1f2-44ce-a740-73c08ca02ea1.png)
+
+const char* ssid = "Username" --> กำหนดตัวแปรเก็บ ssid ของ Wifi
+
+cons char* password = "Password" --> กำหนดตัวแปรเก็บ password ของ Wifi
+
+ESP8266WebSever sever(80) --> เปิด Websever ที่ Port 80
+
+WiFi.mode(WIFI_STA) --> ตั้งค่า wifi เป็นโหมดสถานี
+
+WiFi.begin(ssid,password) --> สำหรับเชื่อมต่อสัญญาณ
+
+### Example 06 Wifi AP Web Sever
+![image](https://user-images.githubusercontent.com/98943439/153914582-e634ab03-3384-48fa-ae4a-976243912d9d.png)
+
+locap_ip --> สำหรับตั้ง IP ของ AP
+
+gateway --> สำหรับตั้ง IP ของ Gateway
+
+subnet --> สำหรับตั้ง subnet mark ของ Wifi
+
+WiFi.softAP(ssid,password) --> ตั้งค่า wifi ในโหมด Access point 
+
+WiFi.softAPConfig(IP,gateway,subnet); --> การตั้งค่า IP gateway subnet ตามค่าที่ใส่ไว้
+
+sever.on --> การเริ่มต้นปล่อยสัญญาณ  Wifi
